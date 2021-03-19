@@ -2,6 +2,7 @@ import React from 'react';
 import {useForm} from "react-hook-form";
 import './App.css';
 import logo from "./assets/screenshot-logo.png";
+
 // import Button from "./compontent/Button";
 
 function App() {
@@ -148,70 +149,70 @@ function App() {
                         <label htmlFor="firstName" className="form-label">
                             Voornaam:
 
-                        <input
-                            className="name-field"
-                            type="text"
-                            id="firstName"
-                            name="firstname"
-                            ref={register({required: true})}
-                        />
+                            <input
+                                className="name-field"
+                                type="text"
+                                id="firstName"
+                                name="firstname"
+                                ref={register({required: true})}
+                            />
                         </label>
                         <label htmlFor="lastName" className="form-label">
                             Achternaam:
 
-                        <input
-                            className="name-field"
-                            type="text"
-                            id="lastName"
-                            name="lastname"
-                            ref={register({required: true})}
-                        />
+                            <input
+                                className="name-field"
+                                type="text"
+                                id="lastName"
+                                name="lastname"
+                                ref={register({required: true})}
+                            />
                         </label>
                         <label htmlFor="age" className="form-label">
                             Leeftijd:
 
-                        <input
-                            className="name-field"
-                            type="number"
-                            id="age"
-                            name="age"
-                            placeholder="Minimaal 18 jaar"
-                            ref={register(
-                                {
-                                    required: true,
-                                    validate: (value) => value >= 18,
-                                    message: 'Minimum leeftijd is 18 jaar',
-                                }
-                            )}
-                        />
+                            <input
+                                className="name-field"
+                                type="number"
+                                id="age"
+                                name="age"
+                                placeholder="Minimaal 18 jaar"
+                                ref={register(
+                                    {
+                                        required: true,
+                                        validate: (value) => value >= 18,
+                                        message: 'Minimum leeftijd is 18 jaar',
+                                    }
+                                )}
+                            />
                         </label>
                         {errors.age && <p className="errors">Minimum leeftijd is 18 jaar</p>}
                         <label htmlFor="zipcode" className="form-label">
                             Postcode:
 
-                        <input
-                            className="name-field"
-                            type="text"
-                            id="zipcode"
-                            name="zipcode"
-                            placeholder="1234AB"
-                            ref={register({
-                                required: true,
-                                pattern: /[0-9]{4}[A-Z]{2}/
-                            })}
-                        />
+                            <input
+                                className="name-field"
+                                type="text"
+                                id="zipcode"
+                                name="zipcode"
+                                placeholder="1234AB"
+                                ref={register({
+                                    required: true,
+                                    pattern: /[0-9]{4}[A-Z]{2}/
+                                })}
+                            />
                         </label>
                         {errors.zipcode && <p className="errors">Geen geldig postcode</p>}
                         <label htmlFor="house-number" className="form-label">
                             Huisnummer zonder toevoeging:
 
-                        <input
-                            className="name-field-number"
-                            type="number"
-                            id="house-number"
-                            name="house-number"
-                            ref={register({required: true})}
-                        />
+                            <input
+                                className="name-field-number"
+                                type="number"
+                                id="house-number"
+                                name="house-number"
+                                ref={register({required: true})}
+                            />
                         </label>
                         <p className="new-block">
                             Bezorgfrequentie
