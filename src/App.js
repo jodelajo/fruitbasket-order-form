@@ -140,7 +140,7 @@ function App() {
                         </button>
                     </label>
 
-                    <button className="button-reset-submit" onClick={resetAll}>Reset</button>
+                    <button className="button-reset" onClick={resetAll}>Reset</button>
 
                 </section>
                 <section>
@@ -269,7 +269,7 @@ function App() {
                         <label>
                 <textarea
                     className="text-area"
-                    placeholder="Wat vond je van het recept?"
+                    placeholder="Wij horen graag van u!"
                     name="message"
                     rows="4"
                     cols="60"
@@ -284,7 +284,7 @@ function App() {
                                    ref={register}/>
                             Ik ga akkoord met de voorwaarden
                         </label>
-                        <button className="button-reset-submit" type="submit">Verzend</button>
+                        <button className="button-submit" type="submit">Verzend</button>
 
                     </form>
                 </section>

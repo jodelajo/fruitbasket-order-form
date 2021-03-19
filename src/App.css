@@ -7,11 +7,13 @@ body {
     padding: 20px 100px;
     display: flex;
     justify-content: center;
-    background-color: #C9EAC2;
+    background-color: #333B31;
 }
 #complete-form {
-    background-color: #78AA0A;
+    background-color: #258F0D;
     padding: 30px;
+    border-radius: 16px;
+    box-shadow: 5px 10px 8px #181D17;
 }
 section {
     display: flex;
@@ -101,14 +103,20 @@ form{
     padding-top: 3px;
     padding-left: 8px;
 }
-.button-reset-submit {
+.button-submit, .button-reset {
     margin-top: 20px;
     padding: 10px 0;
     width: 200px;
     align-self: center;
-    background-color: #28AA0A;
+    background-color: #7EED65;
     cursor: pointer;
-    border: 2px solid #fff;
+    border: none;
     font-size: 18px;
-    color: white;
+    font-weight: bold;
+    color: #2B3329;
+}
+.button-submit {
+    background-color: #2B3329;
+    color: #7EED65;
+    width: 100%;
 }
