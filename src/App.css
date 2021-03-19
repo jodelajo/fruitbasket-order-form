@@ -44,6 +44,7 @@ form{
     align-items: baseline;
     justify-content: center;
     background-color: #fff;
+    border-radius: 4px;
 }
 .counter {
     background-color: #C9EAC2;

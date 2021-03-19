@@ -12,6 +12,13 @@ function App() {
     const {handleSubmit, register, errors, watch} = useForm();
 
     const anders = watch("frequency")
+    const order = [
+        {Aardbeien: countAardbei},
+        {Bananen: countBanaan},
+        {Appels: countAppel},
+        {Kiwi: countKiwi},
+    ]
+
 
     function handleCountUpAardbei() {
         setCountAardbei(countAardbei + 1)
@@ -55,11 +62,7 @@ function App() {
 
 
     function onFormSubmit(data) {
-        console.log(data, `Aardbeien: ${countAardbei} Bananen: ${countBanaan} Appels: ${countAppel} Kiwi's: ${countKiwi}`);
-        console.log(`Aardbeien: ${countAardbei}`)
-        console.log(`Bananen: ${countBanaan}`)
-        console.log(`Appels: ${countAppel}`)
-        console.log(`Kiwi's: ${countKiwi}`)
+        console.log(data, order);
     }
 
     return (
