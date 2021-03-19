@@ -2,7 +2,7 @@ import React from 'react';
 import {useForm} from "react-hook-form";
 import './App.css';
 import logo from "./assets/screenshot-logo.png";
-import Button from "./compontent/Button";
+// import Button from "./compontent/Button";
 
 function App() {
     const [countAardbei, setCountAardbei] = React.useState(0);
@@ -66,7 +66,7 @@ function App() {
         <>
             <div id="complete-form">
                 <section>
-                    <img src={logo}/>
+                    <img src={logo} alt="logo"/>
                     <h1>Fruitmand bezorgservice</h1>
                     <label
                         className="fruitLabel"
@@ -265,6 +265,7 @@ function App() {
                         </p>
                         <label>
                 <textarea
+                    className="text-area"
                     placeholder="Wat vond je van het recept?"
                     name="message"
                     rows="4"
