@@ -13,7 +13,7 @@ body {
 
 #complete-form {
     background-color: #0E7166;
-    padding: 40px 40px 10px 40px;
+    padding: 40px 60px 10px 60px;
     border-radius: 16px;
     box-shadow: 5px 10px 16px #181D17;
 }
@@ -49,7 +49,7 @@ form {
 }
 
 .fruitLabel {
-    padding: 10px 0;
+    padding: 6px 0;
     border: 1px solid #000;
     display: flex;
     align-items: baseline;
