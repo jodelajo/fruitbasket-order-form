@@ -4,7 +4,14 @@
 }
 
 body {
-    padding: 100px;
+    padding: 40px 100px;
+    display: flex;
+    justify-content: center;
+    background-color: #AA0A78;
+}
+#complete-form {
+    background-color: #78AA0A;
+    padding: 20px 30px;
 }
 section {
     display: flex;
@@ -12,9 +19,18 @@ section {
     width: 500px;
     align-items: stretch;
     row-gap: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
+h1 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 500px;
+    color: white;
+    font-weight: bold;
+    font-size: 42px;
+}
 form{
     display: flex;
     flex-direction: column;
@@ -24,10 +40,70 @@ form{
 .fruitLabel {
    padding: 10px 10px 10px 40px;
     border: 1px solid #000;
-    /*text-align: center;*/
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    background-color: #fff;
+}
+.counter {
+    background-color: #C9EAC2;
+    padding: 8px;
+}
+.form-label {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.frequency-label {
+    display: flex;
+    column-gap: 20px;
+    align-items: baseline;
+}
+.fruit {
+    width: 40%;
+    font-size: 24px;
 
 }
 .count-button {
-    padding: 2px 5px;
-    margin: 0 5px;
+    padding: 8px;
+    margin: 0 8px;
+    cursor: pointer;
+    background-color: #28AA0A;
+    border: 2px solid #28AA0A;
+    font-size: 18px;
+    color: white;
+}
+
+.name-field, .name-field-number {
+    display: flex;
+    height: 25px;
+    padding-left: 8px;
+    width: 75%;
+}
+.name-field-number {
+    width: 30%;
+}
+.errors {
+    display: block;
+    font-size: 12px;
+    font-weight: normal;
+    width: 75%;
+    align-self: flex-end;
+}
+.new-block {
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 12px;
+}
+
+.button-reset-submit {
+    margin-top: 20px;
+    padding: 10px 0;
+    width: 200px;
+    align-self: center;
+    background-color: #28AA0A;
+    cursor: pointer;
+    border: 2px solid #fff;
+    font-size: 18px;
+    color: white;
 }

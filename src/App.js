@@ -1,6 +1,7 @@
 import React from 'react';
-import { useForm } from "react-hook-form";
+import {useForm} from "react-hook-form";
 import './App.css';
+import logo from "./assets/screenshot-logo.png";
 import Button from "./compontent/Button";
 
 function App() {
@@ -8,32 +9,40 @@ function App() {
     const [countBanaan, setCountBanaan] = React.useState(0);
     const [countAppel, setCountAppel] = React.useState(0);
     const [countKiwi, setCountKiwi] = React.useState(0);
-    const { handleSubmit, register, errors } = useForm();
+    const {handleSubmit, register, errors, watch} = useForm();
 
+    const anders = watch("frequency")
 
-   function handleCountUpAardbei() {
+    function handleCountUpAardbei() {
         setCountAardbei(countAardbei + 1)
-   }
-   function handleCountDownAardbei(){
+
+    }
+
+    function handleCountDownAardbei() {
         setCountAardbei(countAardbei - 1)
-   }
+    }
 
     function handleCountUpBanaan() {
         setCountBanaan(countBanaan + 1)
     }
-    function handleCountDownBanaan(){
+
+    function handleCountDownBanaan() {
         setCountBanaan(countBanaan - 1)
     }
+
     function handleCountUpAppel() {
         setCountAppel(countAppel + 1)
     }
-    function handleCountDownAppel(){
+
+    function handleCountDownAppel() {
         setCountAppel(countAppel - 1)
     }
+
     function handleCountUpKiwi() {
         setCountKiwi(countKiwi + 1)
     }
-    function handleCountDownKiwi(){
+
+    function handleCountDownKiwi() {
         setCountKiwi(countKiwi - 1)
     }
 
@@ -44,165 +53,240 @@ function App() {
         setCountAppel(0);
     }
 
+
     function onFormSubmit(data) {
-        console.log(data);
+        console.log(data, `Aardbeien: ${countAardbei} Bananen: ${countBanaan} Appels: ${countAppel} Kiwi's: ${countKiwi}`);
+        console.log(`Aardbeien: ${countAardbei}`)
+        console.log(`Bananen: ${countBanaan}`)
+        console.log(`Appels: ${countAppel}`)
+        console.log(`Kiwi's: ${countKiwi}`)
     }
 
-  return (
-    <>
-      <h1>Fruitmand bezorgservice</h1>
-    <section >
-        <label
-            // name="aardbei"
-            className="fruitLabel"
-            htmlFor="aardbei-button"
-        >Aardbeien
-            <Button
-                text="-"
-                id="aardbei-button"
-                onClick={handleCountDownAardbei}
-                />
-            {countAardbei}
-            <Button
-                text="+"
-                id="aardbei-button"
-                onClick={handleCountUpAardbei}
-            />
-        </label>
-        <label
-            // name="banaan"
-            className="fruitLabel"
-            htmlFor="banaan-button"
-        >
-            Bananen
-            <Button
-                text="-"
-                name="banaan-button"
-                onClick={handleCountDownBanaan}
-            />
+    return (
+        <>
+            <div id="complete-form">
+                <section>
+                    <img src={logo}/>
+                    <h1>Fruitmand bezorgservice</h1>
+                    <label
+                        className="fruitLabel"
+                    ><p className="fruit">🍓 Aardbeien</p>
+                        <button
+                            className="count-button"
+                            type="button"
+                            onClick={() => countAardbei > 0 && handleCountDownAardbei()}
+                        > -
+                        </button>
+                        <p className="counter"> {countAardbei} </p>
+                        <button
+                            className="count-button"
+                            type="button"
+                            onClick={handleCountUpAardbei}
+                        > +
+                        </button>
+                    </label>
+                    <label
+                        className="fruitLabel"
+                    >
+                        <p className="fruit">🍌 Bananen</p>
+                        <button
+                            type="button"
+                            className="count-button"
+                            onClick={() => countBanaan > 0 && handleCountDownBanaan()}
+                        > -
+                        </button>
+                        <p className="counter">{countBanaan}</p>
+                        <button
+                            className="count-button"
+                            type="button"
+                            onClick={handleCountUpBanaan}
+                        > +
+                        </button>
+                    </label>
+                    <label
+                        className="fruitLabel"
+                    ><p className="fruit">🍏 Appels</p>
+                        <button
+                            className="count-button"
+                            type="button"
+                            onClick={() => countAppel > 0 && handleCountDownAppel()}
+                        > -
+                        </button>
+                        <p className="counter">{countAppel}</p>
+                        <button
+                            type="button"
+                            className="count-button"
+                            onClick={handleCountUpAppel}> +
+                        </button>
+                    </label>
+                    <label
+                        className="fruitLabel"
+                    ><p className="fruit">🥝 Kiwi's</p>
+                        <button
+                            className="count-button"
+                            type="button"
+                            onClick={() => countKiwi > 0 && handleCountDownKiwi()}
+                        > -
+                        </button>
+                        <p className="counter"> {countKiwi}</p>
+                        <button
+                            className="count-button"
+                            type="button"
+                            onClick={handleCountUpKiwi}
+                        > +
+                        </button>
+                    </label>
 
-            {countBanaan}
-            <Button
-                text="+"
-                name="banaan-button"
-                onClick={handleCountUpBanaan}
-            />
-        </label>
-        <label
-            className="fruitLabel"
-            // name="appel"
-            htmlFor="appel-button"
-        >Appels
-            <Button
-                text="-"
-                id="appel-button"
-                onClick={handleCountDownAppel}
-            />
-            {countAppel}
-            <Button
-                text="+"
-                id="appel-button"
-                onClick={handleCountUpAppel}
-            />
-            </label>
-        <label
-            className="fruitLabel"
-            // name="kiwi"
-            htmlFor=""
-        >Kiwi's
-            <button
-                type="button"
-                className="count-button"
-                onClick={handleCountDownKiwi}
-            >
-                -
-            </button>
-            {countKiwi}
-            <Button
-                text="+"
-                id="kiwi-button"
-                onClick={handleCountUpKiwi}
-            />
+                    <button className="button-reset-submit" onClick={resetAll}>Reset</button>
 
-        </label>
+                </section>
+                <section>
+                    <form onSubmit={handleSubmit(onFormSubmit)}>
+                        <label htmlFor="firstName" className="form-label">
+                            Voornaam:
 
-        <button onClick={resetAll}>Reset</button>
+                        <input
+                            className="name-field"
+                            type="text"
+                            id="firstName"
+                            name="firstname"
+                            ref={register({required: true})}
+                        />
+                        </label>
+                        <label htmlFor="lastName" className="form-label">
+                            Achternaam:
 
-    </section>
+                        <input
+                            className="name-field"
+                            type="text"
+                            id="lastName"
+                            name="lastname"
+                            ref={register({required: true})}
+                        />
+                        </label>
+                        <label htmlFor="age" className="form-label">
+                            Leeftijd:
 
-        <form onSubmit={handleSubmit(onFormSubmit)}>
-            <label htmlFor="firstName">
-                Voornaam:
-            <input
-                type="text"
-                id="firstName"
-                name="firstname"
-                ref={register}
-            />
-            </label>
-            <p>
-                Bezorgfrequentie
-            </p>
-            <label htmlFor="week">
-                <input type="radio"
-                       name="frequency"
-                       id="week"
-                       ref={register}
-                       value="week"
-                />
-                Iedere week
-            </label>
-            <label htmlFor="two-week">
-                <input type="radio"
-                       name="frequency"
-                       id="two-week"
-                       ref={register}
-                       value="two-week"
-                />
-                Om de week
-            </label>
-            <label htmlFor="month">
-                <input type="radio"
-                       name="frequency"
-                       id="month"
-                       ref={register}
-                       value="month"
-                />
-                Iedere maand
-            </label>
-            <label htmlFor="anders">
-                <input type="radio"
-                       name="frequency"
-                       id="anders"
-                       ref={register}
-                       value="anders"
-                />
-                Anders
-            </label>
-            <p>
-                Opmerking
-            </p>
-            <label>
+                        <input
+                            className="name-field"
+                            type="number"
+                            id="age"
+                            name="age"
+                            placeholder="Minimaal 18 jaar"
+                            ref={register(
+                                {
+                                    required: true,
+                                    validate: (value) => value >= 18,
+                                    message: 'Minimum leeftijd is 18 jaar',
+                                }
+                            )}
+                        />
+                        </label>
+                        {errors.age && <p className="errors">Minimum leeftijd is 18 jaar</p>}
+                        <label htmlFor="zipcode" className="form-label">
+                            Postcode:
+
+                        <input
+                            className="name-field"
+                            type="text"
+                            id="zipcode"
+                            name="zipcode"
+                            placeholder="1234AB"
+                            ref={register({
+                                required: true,
+                                pattern: /[0-9]{4}[A-Z]{2}/
+                            })}
+                        />
+                        </label>
+                        {errors.zipcode && <p className="errors">Geen geldig postcode</p>}
+                        <label htmlFor="house-number" className="form-label">
+                            Huisnummer zonder toevoeging:
+
+                        <input
+                            className="name-field-number"
+                            type="number"
+                            id="house-number"
+                            name="house-number"
+                            ref={register({required: true})}
+                        />
+                        </label>
+                        <p className="new-block">
+                            Bezorgfrequentie
+                        </p>
+                        <section>
+                            <label htmlFor="week" className="frequency-label">
+                                <input type="radio"
+                                       name="frequency"
+                                       id="week"
+                                       ref={register({required: true})}
+                                       value="week"
+                                />
+                                Iedere week
+                            </label>
+                            <label htmlFor="two-week" className="frequency-label">
+                                <input type="radio"
+                                       name="frequency"
+                                       id="two-week"
+                                       ref={register({required: true})}
+                                       value="two-week"
+                                />
+                                Om de week
+                            </label>
+                            <label htmlFor="month"
+                                   className="frequency-label">
+                                <input type="radio"
+                                       name="frequency"
+                                       id="month"
+                                       ref={register({required: true})}
+                                       value="month"
+                                />
+                                Iedere maand
+                            </label>
+                            <label htmlFor="anders"
+                                   className="frequency-label">
+                                <input type="radio"
+                                       name="frequency"
+                                       id="anders"
+                                       ref={register({required: true})}
+                                       value="anders"
+                                />
+                                Anders
+                            </label>
+                            {anders === "anders" && (
+                                <textarea
+                                    name="otherFrequency"
+                                    ref={register}
+                                    placeholder="Andere frequentie, nl:"
+                                />
+                            )}
+                        </section>
+                        <p>
+                            Opmerking
+                        </p>
+                        <label>
                 <textarea
-                    // type="text"
                     placeholder="Wat vond je van het recept?"
                     name="message"
                     rows="4"
                     cols="60"
                     ref={register}>
                 </textarea>
-            </label>
-            <label htmlFor="checkbox">
-                <input type="checkbox"
-                       name="checkbox"
-                       ref={register}/>
-                Ik ga akkoord met de voorwaarden
-            </label>
-            <button type="submit">Verzend</button>
+                        </label>
+                        <label htmlFor="checkbox"
+                               className="frequency-label"
+                        >
+                            <input type="checkbox"
+                                   name="checkbox"
+                                   ref={register}/>
+                            Ik ga akkoord met de voorwaarden
+                        </label>
+                        <button className="button-reset-submit" type="submit">Verzend</button>
 
-        </form>
-    </>
-  );
+                    </form>
+                </section>
+            </div>
+        </>
+    );
 }
 
 export default App;
