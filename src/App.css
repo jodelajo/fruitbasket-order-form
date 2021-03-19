@@ -3,17 +3,31 @@
     margin:0;
 }
 
-form {
+body {
+    padding: 100px;
+}
+section {
     display: flex;
     flex-direction: column;
     width: 500px;
     align-items: stretch;
     row-gap: 10px;
+    margin-bottom: 50px;
+}
 
+form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.fruitLabel {
+   padding: 10px 10px 10px 40px;
+    border: 1px solid #000;
+    /*text-align: center;*/
 
 }
-.fruitLabel {
-   padding: 5px;
-    border: 1px solid #000;
-    text-align: center;
+.count-button {
+    padding: 2px 5px;
+    margin: 0 5px;
 }
